@@ -5,6 +5,7 @@
   "author": "Ana Gabriela",
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "1.4.1",
     "@types/node": "^20.10.5",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
