@@ -10,4 +10,13 @@ export const MongoHelper = {
 	async disconnect() {
 		await this.connection.close()
 	},
+
+	getCollection(name: string) {
+		return this.connection.db().collection(name)
+	},
+
+	map(collection: any): any {
+		const { _id, ...collectionWithoutId } = collection
+		return { ...collectionWithoutId, id: _id }
+	},
 }
