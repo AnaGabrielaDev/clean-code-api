@@ -1,14 +1,10 @@
-import { Middleware } from "./Middleware"
+import { Request, Response, NextFunction } from "express"
 
-export class contentType extends Middleware {
-	constructor(private readonly contentType: string) {
-		super()
-	}
-
-	cors = (req: any, res: any, next: any) => {
-		res.set("access-control-allow-origin", "*")
-		res.set("access-control-allow-headers", "*")
-		res.set("access-control-allow-methods", "*")
-		next()
-	}
+export const contentType = (
+	req: Request,
+	res: Response,
+	next: NextFunction,
+) => {
+	res.type("json")
+	next()
 }
